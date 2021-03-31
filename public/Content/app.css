@@ -1,0 +1,88 @@
+/* custom css goes here */
+
+body {
+    padding: 20px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color:#85d3f1;
+    margin-bottom: 50px;
+  }
+ 
+  a {
+    color: #00B7FF;
+  }
+  
+  /* Setting up the box sizing*/
+  *,
+  *::before,
+  *::after {
+        box-sizing:border-box;
+  }
+:root{
+    --clr-accent: #16e0bd;
+}
+@media (min-width: 880px){
+  :root{
+   --fs-h1: 4.5rem;
+   --fs-h2: 3.75rem;
+   --fs-h3: 1.5rem;
+   --fs-body: 1.125rem;
+  }
+}
+  /* hovering the nav links and the logo*/
+.nav-link:hover{
+    opacity: .7;
+    transform: scale(1.2);
+    }
+    .img-fluid:hover{
+      opacity: .7;
+      transform: scale(1.2);
+    }
+/*background image for homepage*/
+  
+.homepage{
+    
+        background-color: var(--clr-accent);
+      }
+
+      /*background image for create page*/
+      .createpage{
+    
+        background-color: var(--clr-accent);
+        background-image: url(../Assets/images/create.png);
+         height: 540px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+      
+      
+      
+      }
+/*background image for edit page*/
+      .editpage{
+    
+        background-color: var(--clr-accent);
+        background-image: url(../Assets/images/edit.png);
+        height: 525px;
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+      
+      
+      
+      
+      }
+      /*Text box and drop down width and height*/
+      .survey{
+        width:400px; 
+        height: 40px;  
+        
+       }
+      .form-select{
+        width:400px; 
+        height: 40px;
+      }
+
+      .button{
+        padding: 1rem
+      }

@@ -1,0 +1,70 @@
+<% include partials/header.ejs %>
+<% include partials/main_nav.ejs %>
+
+<section class="createpage" id="create">
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-8">
+            
+           <p> <h1><%= title %></h1></p>
+
+            <form class="form" method="POST" action="/create">                
+
+                <!-- Select Element -->
+                <div class="col-sm-6 mb-3">
+                    <label for="type">Choose a type of survey:</label>
+                    <select class="form-select" name="type" id="type" 
+                        onchange="typeChanged(this)" required>
+                        <option value="" selected disabled>Choose a type</option>
+                        <option value="Agree or Disagree">Agree or Disagree</option>
+                        <option value="Multiple Choice">Multiple Choice </option>
+                        <option value="Short Answer">Short Answer</option>
+                    </select>
+                </div>
+
+                <div  class="col-sm-6 mb-3" id="activeCheckbox" style="display:none">
+                    <label class="form-label" for="active" value="true">Active</label>
+                    <input type="checkbox" id="active" name="active" checked="checked">
+                </div>
+
+                <!-- Question Element -->
+                <div class="col-sm-6 mb-3" id="questionDiv" style="display:none">
+                    <label class="form-label">Enter The Question :</label>
+                    <input class="survey" type="text" class="form-control" id="question" placeholder="Enter The Question" name="question"
+                        required>
+                </div>
+
+                <!-- Options Element -->
+                <div class="col-sm-8 mb-3" id="optionDiv" style="display:none">
+                    <div id="options" class="mt-3">
+                        <label class="form-label">Enter Options:</label>
+                   
+                        <input class="survey mt-2" type="text" class="form-control"  placeholder="Enter Option 1" name="option1">
+                        
+                       
+                        <input class="survey mt-2" type="text" class="form-control" placeholder="Enter Option 2" id="option" name="option2">
+
+                       
+                        <input class="survey mt-2" type="text" class="form-control" placeholder="Enter Option 3" id="option" name="option3">
+                    </div>
+                   
+                </div>
+                 <div class= button>
+                    <button class="btn btn-primary" type="submit" >
+                       <i class="far fa-submit"></i>Submit
+                    </button>                   
+                    <a href="/" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
+                </div>             
+               </form>
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+</section>
+
+<% include partials/bottom_nav.ejs %>
+<% include partials/footer.ejs %>
+
