@@ -3,6 +3,7 @@ let router = express.Router();
 let Survey = require('../models/survey');
 let homeController = require('../controllers/home');
 
+router.use(express.urlencoded());
 // GET Route survey page
 router.get('/', homeController.displayHomePage);
 
@@ -30,10 +31,22 @@ router.post('/edit/:id', homeController.processEditRequest)
 //delete survey
 router.get('/delete/:id', homeController.deleteSurvey);
 
-/* Get Login page*/
-router.get('/login', function (req, res, next) {
-  res.render('login', { title: 'Login' });
-});
 
+/*Adding Login page  */
+router.get("/login", homeController.displayLoginPage);
+
+/*Post for login page  */
+router.post("/login", homeController.processLoginPage);
+
+/*Adding Register page  */
+router.get("/register", homeController.displayRegisterPage);
+
+/*Post for register page  */
+router.post("/register", homeController.processRegisterPage);
+
+/*To perform logout*/
+
+router.get("/logout", homeController.performLogout);
 
 module.exports = router;
+
